@@ -1,0 +1,76 @@
+// colors
+$accent-color: hsl(150, 100%, 66%);
+$text-color: hsl(193, 38%, 86%);
+$unknown-color: hsl(217, 19%, 38%);
+$card-color: hsl(217, 19%, 24%);
+
+// fonts
+$ff: 'Manrope', sans-serif;
+$fw: 800;
+$fs-body: 24px;
+$fs-number: 12px;
+
+.advice {
+    // dimensions
+    width: 490px;
+    height: 300px;
+    padding: 45px;
+    border-radius: 15px;
+
+    background-color: $card-color;
+
+    // fonts
+    font-family: $ff;
+    font-weight: $fw;
+    text-align: center;
+
+    position: relative;
+
+    .advice__number {
+        // fonts
+        color: $accent-color;
+        text-transform: uppercase;
+        font-size: $fs-number;
+        letter-spacing: 3px;
+    }
+
+    .advice__text {
+        // fonts
+        color: $text-color;
+        font-size: $fs-body;
+
+        padding-top: 20px;
+        padding-bottom: 37px;
+    }
+
+    .advice__divider {
+
+        .advice__divider__img {
+            width: 100%;
+        }
+    }
+
+    .advice__button {
+        // shape
+        border-radius: 100%;
+        width: 60px;
+        height: 60px;
+        border: none;
+
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        bottom: -10%;
+
+        background-color: $accent-color;
+
+        // hover
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: $accent-color 0 0 30px -2px;
+            ;
+        }
+    }
+}
