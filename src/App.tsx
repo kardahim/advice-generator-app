@@ -1,8 +1,8 @@
 import React from 'react';
 
 // components
-import Advice from './components/advice/index'
-import Attribution from './components/advice/index'
+import Advice from './components/advice/Advice'
+import Attribution from './components/attribution/Attribution'
 
 // global style
 import './style.scss'

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 // style
-import './style.scss'
+import './Advice.scss'
 
 // assets
 import divider_desktop from '../../assets/pattern-divider-desktop.svg'
