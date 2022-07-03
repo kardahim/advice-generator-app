@@ -2,10 +2,21 @@
 $text-color: hsl(193, 38%, 86%);
 $ff: 'Manrope', sans-serif;
 
+// mixins
+@mixin mobile {
+    @media (max-width: 570px) {
+        @content;
+    }
+}
+
 .attribution {
     margin-top: 50px;
 
     // fonts
     color: $text-color;
     font-family: $ff;
+
+    @include mobile {
+        font-size: 13px;
+    }
 }

@@ -13,6 +13,7 @@ import dice from '../../assets/icon-dice.svg'
 
 function Advice() {
 
+    // get random advice from api
     const [randomAdvice, setRandomAdvice] = useState({ id: '', advice: '' })
     useEffect(() => {
         getRandomAdvice()
@@ -22,11 +23,34 @@ function Advice() {
         axios.get('https://api.adviceslip.com/advice').then(res => setRandomAdvice(res.data.slip))
     }
 
+    // set mobile divider
+    const [isMobile, setIsMobile] = useState(false)
+    useEffect(() => {
+        window.addEventListener("resize", () => {
+            if (document.body.clientWidth > 570) {
+                setIsMobile(false)
+            }
+            else {
+                setIsMobile(true)
+            }
+        })
+        return () => window.removeEventListener("resize", () => {
+            if (document.body.clientWidth > 570) {
+                setIsMobile(false)
+            }
+            else {
+                setIsMobile(true)
+            }
+        })
+    })
+
     return (
         <div className='advice'>
             <div className='advice__number'>advice #{randomAdvice.id}</div>
             <div className='advice__text'>{randomAdvice.advice}</div>
-            <div className='advice__divider'><img src={divider_desktop} alt="divider desktop icon" className='advice__divider__img' /></div>
+            <div className='advice__divider'>
+                <img src={(!isMobile) ? divider_desktop : divider_mobile} alt="divider icon" className='advice__divider__img' />
+            </div>
             <button className='advice__button' onClick={getRandomAdvice}><img src={dice} alt="dice icon" /></button>
         </div>
     )
