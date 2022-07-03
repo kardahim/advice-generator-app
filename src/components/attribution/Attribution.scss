@@ -1,0 +1,11 @@
+// variables
+$text-color: hsl(193, 38%, 86%);
+$ff: 'Manrope', sans-serif;
+
+.attribution {
+    margin-top: 50px;
+
+    // fonts
+    color: $text-color;
+    font-family: $ff;
+}
